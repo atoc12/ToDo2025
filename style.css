@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    /* Fondos */
+    --background-primary:#00070e; /*Fondo primario*/
+    --backgorund-secondary:#000000; /* fondo secundario */
+    --background-casual:#4646463b;
+
+    /* Header text */
+    --text-header-color:black;
+
+    /* texto */
+    --text-primary:white;
+    --text-primary-invert:black;
+
+    /* botones */
+    --button-primary:white;
+    --button-primary-active:white;
+    --button-danger:rgb(226, 36, 36);
+    --button-succes:rgb(33, 182, 33);
+
+    /* border */
+    --border-color-primary:rgba(75, 74, 74, 0.678);
+
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+}
+
+/* Links */
+a{
+    text-decoration: none;
+    color:var(--text-header-color) ;
+}
+/* text */
+.text-primary{
+    color: var(--text-primary);
+}
+.title{
+    font-size: 1.5rem;
+}
+/* Icons */
+.i-sm{
+    font-size: small;
+}
+.i-md{
+    font-size: medium;
+}
+.i-lg{
+    font-size: larger;
+}
+
+#conteiner-main{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg ,var(--backgorund-secondary),var(--background-primary));
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+/* Header */
+
+.header-content{
+    padding: 1rem;
+    background-color: rgb(235, 232, 232);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-options{
+    gap: 1em;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+/* Main */
+.main-conteiner{
+    background-color: var(--background-casual);
+    flex: 1;
+    margin: 1rem;
+    border-radius: .2em;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* button task */
+.add-button{
+    padding: .5em;
+    background-color: var(--button-primary);
+    border: none;
+    color: var(--text-primary-invert);
+    border-radius: .2em;
+    transition: scale 200ms,filter 200ms;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: .2em;
+    font-size: .9rem;
+    font-weight: 500;
+    
+}
+.add-button:active{
+    filter: brightness(0.5);
+    scale: .98;
+}
+
+/* flex */
+.flex{
+    display: flex;
+}
+.row{
+    flex-direction: row;
+}
+.col{
+    flex-direction: column;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.justify-around{
+    justify-content: space-around;
+}
+.justify-center{
+    justify-content: center;
+}
+
+.gap-sm{
+    gap: .5em;
+}
+.gap-md{
+    gap: 1em;
+}
+.gap-lg{
+    gap: 1.5em;
+}
+
+/* Task  */
+.tasks{
+    flex: 1;
+}
+
+.tasks-layout{
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    padding: 1em;
+    transition: all 200ms linear;
+    overflow: hidden;
+}
+.col-layout{
+    flex-direction: column;
+}
+.row-layout{
+    flex-direction: row;
+}
+
+
+.tasks-layout>div{
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    gap: 1em;
+    min-width: 200px;
+    flex: 1;
+    border: 1px solid var(--border-color-primary);
+    border-radius: .5em;
+    padding: .5em;
+}
+
+.tasks-layout>div>div{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+
+
+.task-container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.task-menu{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+
+/* Task Card */
+
+.card-task{
+    background-color: white;
+    border-radius: .2em;
+    padding: .5em;
+    display: flex;
+    flex-direction: column;
+    gap: .2em;
+}
+.card-task-content{
+    max-height: 100px;
+    overflow: hidden;
+}
+.card-task-details{
+    --line: 5;
+    display: -webkit-box;
+    display: -moz-box;
+    hyphens: auto;
+    line-clamp: var(--line);
+    -webkit-line-clamp: var(--line);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.card-task-btn-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: .5em;
+}
+
+.task-header{
+    margin-top: .5em;
+    text-align: center;
+    color: var(--text-primary);
+    font-weight: 200;
+}
+
+
+#form-task{
+    flex: 1;
+    padding: 1em;  
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#form-inputs-content{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Modal */
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.596);
+    transition: all 200ms linear;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.modal > button{
+    position: absolute;
+    top:5px;
+    left: 5px;
+    z-index: 1;
+}
+
+.modal[data-show]{
+    opacity: 1;
+    visibility: visible;    
+}
+.modal-content{
+    max-width: 650px;
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    border-radius: .4em;
+    flex: 1;
+}
+.modal-custom{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modal[data-show] > .modal-content{
+    animation: slider-from-bottom 500ms forwards; 
+}
+
+.modal-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap:1em;
+    padding: 1em;
+}
+
+/* Form */
+
+.form-control{
+    margin-top: .2em;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.form-control> label{
+    font-weight: 500;
+}
+
+.form-control> input, textarea{
+    background: rgba(255, 255, 255, 0.562);
+    padding: .5em;
+    border: 1px solid rgba(0, 0, 0, 0.562);
+    border-radius: .2em;
+    transition: all 200ms linear;
+}
+.form-control> input:active ,input:focus , textarea:active,text:focus{
+    border: 1px solid transparent;
+    outline: 2px solid rgb(14, 4, 71);
+}
+.form-control> textarea{
+    resize: vertical;
+    min-height: 50px;
+    max-height: 200px;
+    height: 100px;
+}
+
+.form-task-header{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    
+}
+
+
+/* input */
+
+.input-base{
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid rgba(137, 6, 245, 0.13);
+    padding: .5em;
+    outline: none;
+    font-size: 1rem;
+    transition: border 200ms linear;
+    appearance: none;
+    color: var(--text-primary);
+}
+.input-base:focus{
+    outline: none;
+    border: none;
+    border-bottom:1px solid rgba(137, 6, 245, 0.377);
+}
+
+/* button's */
+
+.btn{
+    border: none;
+    padding: .5em;
+    cursor: pointer;
+    border-radius: .2em;
+    background: transparent;
+}
+.btn:active{
+    filter: brightness(0.5);
+}
+
+.btn-primary{
+    padding: .5em;
+    background-color: var(--button-primary);
+    border: none;
+    color: var(--text-primary-invert);
+    border-radius: .2em;
+    transition: scale 200ms,filter 200ms;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: .2em;
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.btn-danger{
+    color: var(--text-primary);
+    background-color: var(--button-danger);
+    transition: filter 200ms linear;
+}
+.btn-succes{
+    color: var(--text-primary);
+    background-color: var(--button-succes);
+}
+
+/* Border radius */
+
+.rounded{
+    border-radius: 50%;
+}
+
+
+
+/* divider */
+
+.divider{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    display: block;
+    /* flex: 1; */
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-color-primary);
+}
+
+
+
+/* Animation */
+
+
+@keyframes slider-from-bottom {
+    0%{
+        opacity: 0;
+        scale: 0;
+        transform: translateY(100%);
+    }
+    100%{
+        scale: 1;
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+
+@keyframes slide-from-right {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide-from-left {
+    0%{
+        transform: translateX(200%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes opacity {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
