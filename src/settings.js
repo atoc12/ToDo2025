@@ -30,7 +30,7 @@ export const SETTINGS = {
         status: {
             textEs: {
                 pending: "Pendiente",
-                inProcess: "En proceso",
+                process: "En proceso",
                 completed: "Completado"
             },
             buttonCompared: {
@@ -40,6 +40,7 @@ export const SETTINGS = {
             }
         }
     },
+    layout_container:document.getElementById("tasks-layout-content"),
     layouts:{
         pending:document.querySelector(".pending"),
         process:document.querySelector(".process"),

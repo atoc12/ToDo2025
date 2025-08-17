@@ -4,6 +4,15 @@ export class Modal {
         this.component = document.getElementById(id);
         this.main();
     }
+    open(){
+        this.component.setAttribute("data-show", "true");
+    }
+    close(){
+        this.component.removeAttribute("data-show");
+    }
+    toggle(){
+        this.component.toggleAttribute("data-show");
+    }
     show(){
         this.component.toggleAttribute("data-show");
     }

@@ -44,12 +44,11 @@
                 </div>
 
                 <div id="tasks-layout-content" class="tasks-layout row-layout">
-
                     <div id="task-pending">
                         <div class="task-header">
                             <h2>Pendiente</h2>
                         </div>
-                        <div class="pending">
+                        <div class="pending layout" data-layout="pending">
 
                         </div>
                     </div>
@@ -58,7 +57,7 @@
                         <div class="task-header">
                             <h2>En proceso</h2>
                         </div>
-                        <div class="process">
+                        <div class="process layout" data-layout="process">
 
                         </div>
                     </div>
@@ -67,7 +66,7 @@
                         <div class="task-header">
                             <h2>Completado</h2>
                         </div>
-                        <div class="completed">
+                        <div class="completed layout" data-layout="completed">
 
                         </div>
                     </div>
@@ -106,7 +105,7 @@
     
                     <div class="form-control">
                         <label for="files">Archivos / Documentos</label>
-                        <input id="files" type="file" name="files">
+                        <input id="files" type="file" name="files" multiple>
                     </div>
     
                     <div class="form-control">
@@ -126,9 +125,23 @@
 
     <template id="template-card">
 
-        <div class="card-task">
+        <div class="card-task card">
             <div class="card-task-header">
                 <h2 class="card-task-title"></h2>
+                <section class="date">
+                    <div class="flex col">
+                        <h4>Inicio</h4>
+                        <span class="start">
+                            
+                        </span>
+                    </div>
+                    <div class="flex col">
+                        <h4>Final</h4>
+                        <span class="end">
+                            
+                        </span>
+                    </div>
+                </section>
             </div>
             <div class="card-task-content">
                 <p class="card-task-details"></p>
@@ -140,11 +153,24 @@
                 </div>
                 <div class="card-task-btn-content">
                     <button class="card-task-btn-remove btn btn-danger ">Eliminar</button>
-                    <select name="status">
-                        <option value="pending">Pendiente</option>
-                        <option value="process">En proceso</option>
-                        <option value="completed">Completado</option>
-                    </select>
+                    <div class="select-content">
+                        <div class="btn-select-custom">
+                            <button class="select-btn">Pendiente  </button>
+                            <i class="bi bi-caret-down-fill"></i>
+                        </div>
+                        <span></span>
+                        <ul class="select">
+                            <li>
+                                <button value="pending">Pendiente</button>
+                            </li>
+                            <li>
+                                <button value="process">En proceso</button>
+                            </li>
+                            <li>
+                                <button value="completed">Completado</button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             
