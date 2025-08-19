@@ -16,6 +16,7 @@
 
     /* botones */
     --button-primary:white;
+    --button-secondary:rgba(24, 24, 24, 0.644);
     --button-primary-active:white;
     --button-danger:rgb(126, 28, 28);
     --button-succes:rgb(33, 182, 33);
@@ -217,6 +218,7 @@ a{
     background-size: cover;
     background-position: center;
     gap: .5em;
+    min-height: 400px;
     height: 100%;
     flex: 1;
     border: 1px solid var(--border-color-primary);
@@ -231,6 +233,14 @@ a{
     text-align: center;
     color: var(--text-primary);
     padding: .2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.task-header>button{
+    width: 30px;
+    padding-left: .2em;
+    padding-right: .2em;
 }
 .task-header>*{
     font-weight: 400;
@@ -558,7 +568,6 @@ a{
 
 .btn{
     border: none;
-    padding: .5em;
     cursor: pointer;
     border-radius: .2em;
     background: transparent;
@@ -583,7 +592,11 @@ a{
     font-size: .9rem;
     font-weight: 500;
 }
-
+.btn-secondary{
+    color: var(--text-primary);
+    background-color: var(--button-secondary);
+    transition: filter 200ms linear;
+}
 .btn-danger{
     color: var(--text-primary);
     background-color: var(--button-danger);
@@ -599,7 +612,6 @@ a{
 .rounded{
     border-radius: 50%;
 }
-
 
 
 /* divider */

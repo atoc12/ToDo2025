@@ -24,6 +24,7 @@ export class App extends DataBase {
                     }
                 },[
                     {name:"ID", options:{unique:true}},
+                    {name:"order"}
                 ])
             }
             await this.connect();            

@@ -1,25 +1,26 @@
 import { SETTINGS } from "./settings.js";
+/**
+ * Este modulo tiene por objetivo abarcar el sistema ORM
+ * Se estará utilizando la API del navegador indexedDB
+ * Tambíen se integra JSdocs, una forma de documentar en algunos IDLE para permitir la inferencias de datos
 
+ */
 /**
  * @typedef {Object} SettingsDB
  * @property {string} name
  * @property {number} version
 */
-
 /**
  * @typedef {Object} SettingsModel
  * @property {string} name
  * @property {IDBDatabase} db
  * @property {IDBObjectStoreParameters} options
 */
-
 /**
  * @typedef {Object} Structure
  * @property {string} name
  * @property {IDBIndexParameters} options
 */
-
-
 export class Model {
     /** @type {SettingsModel | null} */ settings;
     /** @type {Structure[]} */ structure ;

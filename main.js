@@ -9,22 +9,21 @@ class TODO extends App {
     layoutTask = new LayoutTask();
     // Metodo encargado de inicializar eventos dentro de la aplicación
     events(){
-        
+        this.layoutTask.events();
     }
     // Metodo principal de la aplicación.
     main(){
-        this.layoutTask.main();
         this.model.task.getAll()
         .then((/** @type {TaskUI[]} **/res)=>{
             if(res){
-                console.log(res);
                 res.map((task)=>{
                     let newTaskCard = new Task(task);
                     this.tasks.push(task);
                     this.layoutTask.addTask(newTaskCard);
-                    newTaskCard.render();
                 })
             }
+        }).finally(()=>{
+            this.layoutTask.render();
         });
 
         let modalForm = new Modal({ id:"modal-1" });
