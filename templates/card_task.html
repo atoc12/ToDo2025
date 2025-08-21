@@ -1,0 +1,54 @@
+<template id="template-card">
+    <div class="card-task card">
+        <div class="card-task-header">
+            <section>
+                <h2 class="card-task-id">#</h2>
+                <h2 class="card-task-title"></h2>
+            </section>
+            <section class="date">
+                <div class="flex col">
+                    <h4>Inicio</h4>
+                    <span class="start">
+                        
+                    </span>
+                </div>
+                <div class="flex col">
+                    <h4>Final</h4>
+                    <span class="end">
+                        
+                    </span>
+                </div>
+            </section>
+        </div>
+        <div class="card-task-content">
+            <p class="card-task-details"></p>
+        </div>
+        <span class="divider"></span>
+        <div class="card-task-footer">
+            <div class="card-task-other">
+                <a href="#" class="pdf-link" target="_blank" ></a>
+            </div>
+            <div class="card-task-btn-content draggable-handle">
+                <button class="card-task-btn-remove btn btn-danger p-sm ">Eliminar</button>
+                <div class="select-content">
+                    <div class="btn-select-custom">
+                        <button class="select-btn">Pendiente  </button>
+                        <i class="bi bi-caret-down-fill"></i>
+                    </div>
+                    <span></span>
+                    <ul class="select">
+                        <li>
+                            <button value="pending">Pendiente</button>
+                        </li>
+                        <li>
+                            <button value="process">En proceso</button>
+                        </li>
+                        <li>
+                            <button value="completed">Completado</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

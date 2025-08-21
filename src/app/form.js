@@ -14,6 +14,7 @@ export class Form {
             this.save(e,save);
         })
     }
+    
     save(event,callback){
         if(callback) callback(event,this);
     }
@@ -21,4 +22,24 @@ export class Form {
         this.field = {};
         if(callback) callback(event,this);
     }
+
+    setValues(values) {
+        console.log(values);
+        this.field = { ...this.field, ...values };
+        for (let key in values) {
+            const input = this.form.querySelector(`[name="${key}"]`);
+            if (input) {
+                if (input.type === "checkbox") {
+                    input.checked = !!values[key];
+                } else if (input.type === "radio") {
+                    const radio = this.form.querySelector(`[name="${key}"][value="${values[key]}"]`);
+                    if (radio) radio.checked = true;
+                } else {
+                    input.value = values[key];
+                }
+            }
+        }
+    }
+
+
 }

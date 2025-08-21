@@ -37,13 +37,12 @@ export class LayoutCard {
     }
 /** @param {Task} task  */
     addCard (task) {
-        console.log(this.cards);
         this.cards[task.status].push(task);
         task.render();
     }
     /** @param {Task} task  */
     removeCard(task){
-        let newArray = this.cards[task.status].filter( t => t.ID != task.ID );
+        let newArray = this.cards[task.status].filter( t => t.data.ID != task.data.ID );
         this.cards[task.status] = newArray;
         task.remove();
     }
