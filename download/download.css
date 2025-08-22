@@ -1,0 +1,24 @@
+#links-download{
+    display: flex;
+    gap: 1em;
+}
+#links-download a{
+    font-size: 2rem;
+    color: var(--text-primary);
+    transition: color .3s ease-in-out;
+}
+#links-download a>i{
+    transition: all .3s ease-in-out;
+}
+
+.windows-icon:hover {
+    color: #0078D6;
+}
+
+.apple-icon:hover {
+    color: #000000; 
+}
+
+.linux-icon:hover {
+    color: #FFCC00;
+}

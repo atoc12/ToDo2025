@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Libreria de iconos de bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">    
+    <link rel="stylesheet" href="/style.css">    
     <title>To do</title>
 </head>
 <body>
@@ -18,177 +18,19 @@
                 </h1>
             </div>
             <div class="header-options">
-                <a href="#">Documentación</a>
-                <a href="https://github.com/atoc12/ToDo2025/tree/v2" target="_blank" >Repositorio</a>
+                <!-- <a href="#"> <i class="bi bi-file-earmark-text"></i> Documentación</a> -->
+                <a href="download/"> <i class="bi bi-download"></i> Descarga</a>
+                <a href="https://github.com/atoc12/ToDo2025/tree/v2" target="_blank" > <i class="bi bi-github"></i> Repositorio</a>
             </div>
         </header>
-        <!--Task container-->
-        <main class="main-conteiner">
-            <div class="task-container">
 
-                <div class="task-menu flex row gap-sm justify-between">
-                    <input type="search" class="input-base" placeholder="Buscar" id="layout-searcher"/>
-                    <div class="flex row gap-sm">
-
-                        <button class="add-button" data-modal="modal-1">
-                            <i class="bi bi-plus i-lg"></i>
-                            Añadir
-                        </button>
-    
-                        <button class="btn btn-primary" id="layout-btn">
-                            <i class="bi bi-layout-three-columns"></i>
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <div id="tasks-layout-content" class="tasks-layout row-layout">
-                    <div id="task-pending">
-                        <div class="task-header">
-                            <h2>Pendiente</h2>
-                            <button class="btn btn-secondary btn-order">
-                                <i class="bi bi-arrow-down-up i-md "></i>
-                            </button>
-                        </div>
-                        <div class="pending layout" data-layout="pending">
-
-                        </div>
-                    </div>
-
-                    <div id="task-in-process">
-                        <div class="task-header">
-                            <h2>En proceso</h2>
-                            <button class="btn btn-secondary btn-order">
-                                <i class="bi bi-arrow-down-up i-md"></i>
-                            </button>
-                        </div>
-                        <div class="process layout" data-layout="process">
-
-                        </div>
-                    </div>
-
-                    <div id="task-completed">
-                        <div class="task-header">
-                            <h2>Completado</h2>
-                            <button class="btn btn-secondary btn-order">
-                                <i class="bi bi-arrow-down-up i-md"></i>
-                            </button>
-                        </div>
-                        <div class="completed layout" data-layout="completed">
-
-                        </div>
-                    </div>
-
-                </div>
-
-
+        <main class="flex flex-1 align-center justify-center h-full">
+            <div class="p-sm">
+                <p class="text-primary">Comenzar a utilizar el Gestor de tareas</p>
+                <a href="app/" class="btn btn-primary">Iniciar</a>
             </div>
         </main>
+
     </div>
-    <!-- Modal -->
-    <div id="modal-1" class="modal" >
-        <Button class="btn rounded text-primary" data-modal="modal-1"><i class="bi bi-x i-lg"></i></Button>
-        <div class="modal-content modal-custom form-layout">
-            <form id="form-task">
-                <div id="form-inputs-content">
-                    <div class="form-task-header">
-                        <i class="bi bi-clipboard2-fill i-lg"></i>
-                        <h1>Crear tarea</h1>
-                    </div>
-    
-                    <div class="form-control">
-                        <label for="title">Nombre de la tarea</label>
-                        <input id="title" type="text" name="title" placeholder="Ingrese nombre de la tarea">
-                    </div>
-    
-                    <div class="form-control">
-                        <label for="start_date">Inicio</label>
-                        <input id="start_date" type="date" name="start_date">
-                    </div>
-    
-                    <div class="form-control">
-                        <label for="end_date">Final</label>
-                        <input id="end_date" type="date" name="end_date">
-                    </div>
-    
-                    <div class="form-control">
-                        <label for="files">Archivos / Documentos</label>
-                        <input id="files" type="file" name="files" multiple>
-                    </div>
-    
-                    <div class="form-control">
-                        <label for="details">Detalles</label>
-                        <textarea id="details" name="details" ></textarea>
-                    </div>
-                </div>
-                
-                <div class="modal-footer">
-                    <button class="btn btn-danger" type="reset" >Cancelar</button>
-                    <button class="btn btn-succes"  type="submit" >Guardar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-
-    <template id="template-card">
-
-        <div class="card-task card">
-            <div class="card-task-header">
-                <section>
-                    <h2 class="card-task-id">#</h2>
-                    <h2 class="card-task-title"></h2>
-                </section>
-                <section class="date">
-                    <div class="flex col">
-                        <h4>Inicio</h4>
-                        <span class="start">
-                            
-                        </span>
-                    </div>
-                    <div class="flex col">
-                        <h4>Final</h4>
-                        <span class="end">
-                            
-                        </span>
-                    </div>
-                </section>
-            </div>
-            <div class="card-task-content">
-                <p class="card-task-details"></p>
-            </div>
-            <span class="divider"></span>
-            <div class="card-task-footer">
-                <div class="card-task-other">
-                    <a href="#" class="pdf-link" target="_blank" ></a>
-                </div>
-                <div class="card-task-btn-content">
-                    <button class="card-task-btn-remove btn btn-danger ">Eliminar</button>
-                    <div class="select-content">
-                        <div class="btn-select-custom">
-                            <button class="select-btn">Pendiente  </button>
-                            <i class="bi bi-caret-down-fill"></i>
-                        </div>
-                        <span></span>
-                        <ul class="select">
-                            <li>
-                                <button value="pending">Pendiente</button>
-                            </li>
-                            <li>
-                                <button value="process">En proceso</button>
-                            </li>
-                            <li>
-                                <button value="completed">Completado</button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
-    </template>
-    <script type="module" src="main.js"></script>
 </body>
 </html>

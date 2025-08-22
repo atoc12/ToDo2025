@@ -1,8 +1,5 @@
-import { Form } from "./form.js";
-import { Modal } from "./modal.js";
 import { DataBase, Model } from "./ORM.js";
 import { SETTINGS } from "./settings.js";
-import { Task } from "./task.js";
 
 export class App extends DataBase {
     constructor(){
@@ -15,6 +12,7 @@ export class App extends DataBase {
     }
     async init() {
         try {
+            /** @type {Record<string, Model>} */
             this.model = {
                 task:new Model({
                     name:"task",
